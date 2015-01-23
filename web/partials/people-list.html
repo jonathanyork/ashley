@@ -1,0 +1,55 @@
+<!-- Main Feed -->
+<!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+
+<div class="row">
+    <div class="large-2 columns small-3">{{message}}</div>
+    <div class="large-6 columns">
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+
+    </div>
+    <div class="large-4 columns">
+        <input ng-model="query">
+    </div>
+</div>
+<!-- Feed Entry -->
+<div ng-repeat="person in people | filter:query | orderBy:orderProp">
+    <div class="row">
+        <div class="large-2 columns small-3">
+            <a href="#/people/{{person._id}}"><img src="http://placehold.it/80x80&text=[img]" />
+            </a>
+        </div>
+        <div class="large-10 columns">
+            <p><strong><a href="#/people/{{person._id}}">{{person.name}}</a> said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+            <ul class="inline-list">
+                <li><a href="">Reply</a>
+                </li>
+                <li><a href="">Share</a>
+                </li>
+            </ul>
+
+<!--
+            <h6>2 Comments</h6>
+            <div class="row">
+                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" />
+                </div>
+                <div class="large-10 columns">
+                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" />
+                </div>
+                <div class="large-10 columns">
+                    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+</div>
+<!-- End Feed Entry -->
+
+<hr />
