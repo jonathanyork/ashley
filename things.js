@@ -1,7 +1,7 @@
 var monk = require('monk'),
     wrap = require('co-monk'),
     co = require('co'),
-    db = monk(process.env.IP + '/library');
+    db = monk(process.env.DB_PORT_27017_TCP_ADDR + '/library');
 
 // From lifeofjs
 co(function* () {

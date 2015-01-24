@@ -6,7 +6,7 @@ yourstoryControllers.controller('PeopleListCtrl', ['$scope', 'Person', function(
     $scope.people = Person.query();
 
     // Hello AngularJS message
-    $scope.message = "";
+    $scope.message = "Your Story";
 
     // Initialize empty user array
     //    $scope.users = [{name: "Darwin", age: 3}, {name: "Hugo", age: 1},
